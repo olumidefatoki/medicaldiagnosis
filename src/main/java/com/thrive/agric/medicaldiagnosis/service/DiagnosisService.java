@@ -26,7 +26,7 @@ public class DiagnosisService {
     private final ModelMapper mapper;
 
 
-    public void postData(DiagnosisRequest request) {
+    public DiagnosisRequest postData(DiagnosisRequest request) {
 
         Issue issue = mapper.map(request, Issue.class);
         log.info("request {}", request);
@@ -39,10 +39,10 @@ public class DiagnosisService {
         if (!present) {
             repo.save(diagnosis);
         }
-
+return request;
     }
 
-    public void saveSpecilisationData(SpecialisationRequest request) {
+    public SpecialisationRequest saveSpecilisationData(SpecialisationRequest request) {
         log.info("{}", request);
         request.getSpecialisations().forEach(data -> {
             boolean present = repo.findOneOptional(Specialisation.class, data.getId()).isPresent();
@@ -54,6 +54,7 @@ public class DiagnosisService {
             SpecilisationIssue specilisationIssue = SpecilisationIssue.builder().issueId(request.getIssueId()).specilisationId(data.getId()).build();
             repo.save(specilisationIssue);
         });
+        return request;
     }
 
     public Pagination<DiagnosisResponse> getAllDiagnosis(SearchRequest request) {

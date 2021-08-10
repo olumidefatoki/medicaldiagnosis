@@ -26,7 +26,7 @@ public class DiagnosisController {
     }
 
     @PostMapping("/specilisation")
-    public ResponseEntity<ApiResponse> postDiagnosis(@RequestBody SpecialisationRequest request) {
+    public ResponseEntity<ApiResponse> postSpeciliation(@RequestBody SpecialisationRequest request) {
         service.saveSpecilisationData(request);
         ApiResponse<String> response = ApiResponse.<String>builder()
                 .message("successful")
