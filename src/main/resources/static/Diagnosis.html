@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Diagnosis</title>
+
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="your,keywords">
+    <meta name="description" content="Short explanation about this website">
+    <!-- END META -->
+
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
+          type='text/css'/>
+    <link type="text/css" rel="stylesheet" href="./assets/css/theme-default/bootstrap.css?1422792965"/>
+    <link type="text/css" rel="stylesheet" href="./assets/css/theme-default/materialadmin.css?1425466319"/>
+    <link type="text/css" rel="stylesheet" href="./assets/css/theme-default/font-awesome.min.css?1422529194"/>
+    <link type="text/css" rel="stylesheet"
+          href="./assets/css/theme-default/material-design-iconic-font.min.css?1421434286"/>
+    <link type="text/css" rel="stylesheet"
+          href="./assets/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989"/>
+    <link type="text/css" rel="stylesheet"
+          href="./assets/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990"/>
+    <link type="text/css" rel="stylesheet"
+          href="./assets/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990"/>
+    <!-- END STYLESHEETS -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="./assets/js/libs/utils/html5shiv.js?1403934957"></script>
+    <script type="text/javascript" src="./assets/js/libs/utils/respond.min.js?1403934956"></script>
+    <![endif]-->
+</head>
+<body class="menubar-hoverable header-fixed ">
+
+<!-- BEGIN HEADER-->
+<header id="header">
+    <div class="headerbar">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="headerbar-left">
+            <ul class="header-nav header-nav-options">
+                <li class="header-nav-brand">
+                    <div class="brand-holder">
+                        <a href="../../html/dashboards/dashboard.html">
+                            <span class="text-lg text-bold text-primary">apimedic App</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="headerbar-right">
+            <!--end .header-nav-options -->
+            <ul class="header-nav header-nav-profile">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+
+                    </a>
+                    <ul class="dropdown-menu animation-dock">
+
+                        <li><a href="logout"><i class="fa fa-power-off"></i> Log Out</a></li>
+                    </ul><!--end .dropdown-menu -->
+                </li><!--end .dropdown -->
+            </ul><!--end .header-nav-profile -->
+
+        </div><!--end #header-navbar-collapse -->
+    </div>
+</header>
+<!-- END HEADER-->
+
+<!-- BEGIN BASE-->
+<div id="base">
+
+    <!-- BEGIN OFFCANVAS LEFT -->
+    <div class="offcanvas">
+    </div><!--end .offcanvas-->
+    <!-- END OFFCANVAS LEFT -->
+
+    <!-- BEGIN CONTENT-->
+    <div id="content">
+        <section class="style-default-bright">
+            <div class="section-header">
+                <h2 class="text-primary">Diagnosis</h2>
+            </div>
+            <div class="section-body">
+
+                <!-- BEGIN DATATABLE 1 -->
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-3"><select class="form-control input-lg" id="symptoms" name="state"
+                                                          class="form-control" required></select></div>
+                            <div class="col-md-3"><input class="form-control input-lg" id="year_of_birth" type="text"
+                                                         placeholder="year of birth"/></div>
+                            <div class="col-md-3"><select class="form-control input-lg" id="gender" name="gender"
+                                                          class="form-control" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select></div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary btn-lg form-control input-lg" id="Diagnose"><i
+                                        class="fa fa-filter"> </i> Diagnose
+                                </button>
+                            </div>
+                            <!--<div class="col-md-3"><button class="btn btn-default btn-sm form-control input-sm" id="download"><i class="fa fa-download"></i> Download Activated Cards</button></div> -->
+                        </div>
+                    </div>
+                </div><!--end .row -->
+
+                <!-- BEGIN DATATABLE 2 -->
+                <br>
+                <div class="row">
+                    <!--end .col -->
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table id="cust_datatable" cellpadding="0" cellspacing="0" border="0"
+                                   class="datatable table table-striped table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Symptoms</th>
+                                    <th>Issues</th>
+                                    <th>Accuracy</th>
+                                    <th>ProfName</th>
+                                    <th>Icd</th>
+                                    <th>IcdName</th>
+                                    <th>Specialisation</th>
+                                </tr>
+                                </thead>
+
+                                <tbody id="tbody"></tbody>
+                            </table>
+                            <div class="col-md-3"><select class="form-control input-lg" id="status" name="status"
+                                                          class="form-control" required>
+                                <option value="valid">Valid</option>
+                                <option value="invalid">Invalid</option>
+                            </select></div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-primary btn-lg form-control input-lg" id="Save">
+                                    Save
+                                </button>
+                            </div>
+                        </div><!--end .table-responsive -->
+                    </div><!--end .col -->
+                </div><!--end .row -->
+                <!-- END DATATABLE 2 -->
+
+            </div><!--end .section-body -->
+        </section>
+    </div><!--end #content-->
+    <!-- END CONTENT -->
+
+    <!-- BEGIN MENUBAR-->
+    <!--end #menubar-->
+
+    <div id="menubar" class="menubar-inverse ">
+        <div class="menubar-fixed-panel">
+            <div>
+                <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar"
+                   href="javascript:void(0);">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="expanded">
+                <a href="#">
+                    <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+                </a>
+            </div>
+        </div>
+        <div class="menubar-scroll-panel">
+
+            <!-- BEGIN MAIN MENU -->
+            <ul id="main-menu" class="gui-controls">
+
+                <!-- BEGIN DASHBOARD -->
+                <li>
+                    <a href="" class="active">
+                        <div class="gui-icon"><i class="md md-home"></i></div>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+
+        </div>
+
+    </div><!--end .menubar-scroll-panel-->
+</div>
+<!-- END MENUBAR -->
+
+<!-- BEGIN OFFCANVAS RIGHT -->
+<!--end .offcanvas-->
+<!-- END OFFCANVAS RIGHT -->
+
+</div><!--end #base-->
+<!-- END BASE -->
+<script src="./assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+<script src="./assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        var data;
+        var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im9sdW1pZGUuZmF0b2tpQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc2lkIjoiOTQ5NSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdmVyc2lvbiI6IjIwMCIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGltaXQiOiI5OTk5OTk5OTkiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXAiOiJQcmVtaXVtIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9sYW5ndWFnZSI6ImVuLWdiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9leHBpcmF0aW9uIjoiMjA5OS0xMi0zMSIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcHN0YXJ0IjoiMjAyMS0wOC0wNCIsImlzcyI6Imh0dHBzOi8vc2FuZGJveC1hdXRoc2VydmljZS5wcmlhaWQuY2giLCJhdWQiOiJodHRwczovL2hlYWx0aHNlcnZpY2UucHJpYWlkLmNoIiwiZXhwIjoxNjI4NjAxNjc5LCJuYmYiOjE2Mjg1OTQ0Nzl9.4IWPQfRTptrwnl7KSqMhVKduxP6xkBV-gdCJGhcGsOs';
+        $.getJSON("https://sandbox-healthservice.priaid.ch/symptoms?token=" + token + "&format=json&language=en-gb",
+            function (json) {
+                $.each(json, function (key, value) {
+                    $('#symptoms').append($("<option></option>").text(value.Name).val(value.ID));
+                });
+            });
+
+        $('button#Diagnose').click(function () {
+            var year_of_birth = $('#year_of_birth').val();
+            var gender = $('#gender').val();
+            var symptom = $('#symptoms').val();
+            var symptomName = $('#symptoms').find(":selected").text();
+            if (year_of_birth == '') {
+                alert("year_of_birth is not provided");
+            }
+            $.getJSON("https://sandbox-healthservice.priaid.ch/diagnosis?symptoms=[" + symptom + "]&gender=" + gender + "&year_of_birth=" + year_of_birth + "&token=" + token + "&format=json&language=en-gb",
+                function (json) {
+                    data = json;
+                    $.each(json, function (key, value) {
+                        var specialisation = "<ul>";
+                        for (var i = 0; i < value.Specialisation.length; i++) {
+                            specialisation += '<li>' + value.Specialisation[i].Name + '</li>';
+                        }
+                        specialisation += '</ul>';
+
+                        var eachrow = "<tr>"
+                            + "<td>" + symptomName + "</td>"
+                            + "<td>" + value.Issue.Name + "</td>"
+                            + "<td>" + value.Issue.Accuracy + "</td>"
+                            + "<td>" + value.Issue.ProfName + "</td>"
+                            + "<td>" + value.Issue.Icd + "</td>"
+                            + "<td>" + value.Issue.IcdName + "</td>"
+                            + "<td>" + specialisation + "</td>"
+                            + "</tr>";
+                        $('#tbody').append(eachrow);
+                    });
+                });
+        });
+
+        $('#Save').click(function () {
+            document.getElementById("Save").disabled = true;
+            var symptomName = $('#symptoms').find(":selected").text();
+            var status = $('#status').val();
+            document.getElementById("Save").disabled = false;
+            for (var i = 0; i < data.length; i++) {
+            let issueData = data[i].Issue;
+                issueData.symptomName = symptomName;
+                issueData.status = status;
+            callEndPoint("http://localhost:8098/api/v1/diagnosis/issue", JSON.stringify(issueData), "POST")
+                let specialisationList = data[i].Specialisation;
+                let specialisationData ={};
+                specialisationData.specialisations=specialisationList;
+                specialisationData.issueId = issueData.ID;
+                console.log(specialisationData)
+                callEndPoint("http://localhost:8098/api/v1/diagnosis/specilisation", JSON.stringify(specialisationData), "POST")
+                // for (let j = 0; j < SpecialisationList.length; j++) {
+                //     SpecialisationList[0]
+                //     console.log(SpecialisationData[j]);
+                // }
+
+            }
+        });
+
+        function callEndPoint(url, data, type) {
+            $.ajax({
+                type: type,
+                url: url,
+                contentType: "application/json",
+                data: data
+            }).done(function(data, status, jqxhr) {
+                console.log(data);
+            }).fail(function( data,status, textStatus ) {
+                console.log(data);
+            }) ;
+        }
+    });
+</script>
+</body>
+</html>
