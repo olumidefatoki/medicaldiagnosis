@@ -13,6 +13,12 @@ public class Issue {
     @Column
     String name;
     @Column
+    int ranking;
+    @Column
+    String symptomName;
+    @Column
+    String status;
+    @Column
     int accuracy;
     @Column
     String icd;
@@ -20,6 +26,6 @@ public class Issue {
     String icdName;
     @Column
     String profName;
-    @Column
-    int ranking;
+
+
 }

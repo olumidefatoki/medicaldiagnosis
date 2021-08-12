@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Beneficiaries</title>
+
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="your,keywords">
+    <meta name="description" content="Short explanation about this website">
+    <link rel="shortcut icon" href="./assets/img/tingg.jpg">
+    <!-- END META -->
+
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
+          type='text/css'/>
+    <link type="text/css" rel="stylesheet" href="./assets/css/theme-default/bootstrap.css?1422792965"/>
+    <link type="text/css" rel="stylesheet" href="./assets/css/theme-default/materialadmin.css?1425466319"/>
+    <link type="text/css" rel="stylesheet" href="./assets/css/theme-default/font-awesome.min.css?1422529194"/>
+    <link type="text/css" rel="stylesheet"
+          href="./assets/css/theme-default/material-design-iconic-font.min.css?1421434286"/>
+    <link type="text/css" rel="stylesheet"
+          href="./assets/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989"/>
+    <link type="text/css" rel="stylesheet"
+          href="./assets/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990"/>
+    <link type="text/css" rel="stylesheet"
+          href="./assets/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990"/>
+    <!-- END STYLESHEETS -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="./assets/js/libs/utils/html5shiv.js?1403934957"></script>
+    <script type="text/javascript" src="./assets/js/libs/utils/respond.min.js?1403934956"></script>
+    <![endif]-->
+</head>
+<body class="menubar-hoverable header-fixed ">
+
+<!-- BEGIN HEADER-->
+<header id="header">
+    <div class="headerbar">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="headerbar-left">
+            <ul class="header-nav header-nav-options">
+                <li class="header-nav-brand">
+                    <div class="brand-holder">
+                        <a href="../../html/dashboards/dashboard.html">
+                            <span class="text-lg text-bold text-primary">apimedic App</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="headerbar-right">
+            <!--end .header-nav-options -->
+            <ul class="header-nav header-nav-profile">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+
+                    </a>
+                    <ul class="dropdown-menu animation-dock">
+
+                        <li><a href="logout"><i class="fa fa-power-off"></i> Log Out</a></li>
+                    </ul><!--end .dropdown-menu -->
+                </li><!--end .dropdown -->
+            </ul><!--end .header-nav-profile -->
+
+        </div><!--end #header-navbar-collapse -->
+    </div>
+</header>
+<!-- END HEADER-->
+
+<!-- BEGIN BASE-->
+<div id="base">
+
+    <!-- BEGIN OFFCANVAS LEFT -->
+    <div class="offcanvas">
+    </div><!--end .offcanvas-->
+    <!-- END OFFCANVAS LEFT -->
+
+    <!-- BEGIN CONTENT-->
+    <div id="content">
+        <section class="style-default-bright">
+            <div class="section-header">
+                <h2 class="text-primary">Beneficiaries</h2>
+            </div>
+            <div class="section-body">
+
+                <!-- BEGIN DATATABLE 1 -->
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-3"><input class="form-control input-sm" id="state" type="text"
+                                                         placeholder="State"/></div>
+                            <div class="col-md-3"><input class="form-control input-sm" id="lga" type="text"
+                                                         placeholder="LGA"/></div>
+                            <div class="col-md-3"><input class="form-control input-sm" id="phone_number" type="text"
+                                                         placeholder="Phone Number"/></div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary btn-sm form-control input-sm" id="searchfilter"><i
+                                        class="fa fa-filter"></i> Filter Search
+                                </button>
+                            </div>
+                            <!--<div class="col-md-3"><button class="btn btn-default btn-sm form-control input-sm" id="download"><i class="fa fa-download"></i> Download Activated Cards</button></div> -->
+                        </div>
+                    </div>
+                </div><!--end .row -->
+
+                <!-- BEGIN DATATABLE 2 -->
+                <br>
+                <div class="row">
+                    <!--end .col -->
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table id="cust_datatable" cellpadding="0" cellspacing="0" border="0"
+                                   class="datatable table table-striped table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Amount</th>
+                                    <th>State</th>
+                                    <th>LGA</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+
+                                <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Amount</th>
+                                    <th>State</th>
+                                    <th>LGA</th>
+                                    <th>Action</th>
+
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div><!--end .table-responsive -->
+                    </div><!--end .col -->
+                </div><!--end .row -->
+                <!-- END DATATABLE 2 -->
+
+            </div><!--end .section-body -->
+        </section>
+    </div><!--end #content-->
+    <!-- END CONTENT -->
+
+    <!-- BEGIN MENUBAR-->
+    <!--end #menubar-->
+    <div id="menubar" class="menubar-inverse ">
+        <div class="menubar-fixed-panel">
+            <div>
+                <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar"
+                   href="javascript:void(0);">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="expanded">
+                <a href="#">
+                    <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+                </a>
+            </div>
+        </div>
+        <div class="menubar-scroll-panel">
+
+            <!-- BEGIN MAIN MENU -->
+            <ul id="main-menu" class="gui-controls">
+
+                <!-- BEGIN DASHBOARD -->
+                <li>
+                    <a href="" class="active">
+                        <div class="gui-icon"><i class="md md-home"></i></div>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+
+        </div>
+        <!-- END MENUBAR -->
+
+        <!-- BEGIN OFFCANVAS RIGHT -->
+        <!--end .offcanvas-->
+        <!-- END OFFCANVAS RIGHT -->
+
+    </div><!--end #base-->
+    <!-- END BASE -->
+
+    <!-- BEGIN JAVASCRIPT -->
+    <script src="./assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+    <script src="./assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="./assets/js/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="./assets/js/libs/spin.js/spin.min.js"></script>
+    <script src="./assets/js/libs/autosize/jquery.autosize.min.js"></script>
+    <script src="./assets/js/libs/DataTables/jquery.dataTables.min.js"></script>
+    <script src="./assets/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js"></script>
+    <script src="./assets/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script src="./assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+    <script src="./assets/js/core/source/App.js"></script>
+    <script src="./assets/js/core/source/AppNavigation.js"></script>
+    <script src="./assets/js/core/source/AppOffcanvas.js"></script>
+    <script src="./assets/js/core/source/AppCard.js"></script>
+    <script src="./assets/js/core/source/AppForm.js"></script>
+    <script src="./assets/js/core/source/AppNavSearch.js"></script>
+    <script src="./assets/js/core/source/AppVendor.js"></script>
+    <script src="./assets/js/core/demo/Demo.js"></script>
+    <script src="./assets/js/core/demo/DemoTableDynamic.js"></script>
+    <!-- END JAVASCRIPT -->
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            // $("#searchfilter").click(function () {
+            //     var state = $('#state').val();
+            //     var lga = $('#lga').val();
+            //     var phoneNumber = $('#phone_number').val();
+            //     table
+            //         .column(1).search(state)
+            //         .column(2).search(lga)
+            //         .column(3).search(phoneNumber)
+            //         .draw();
+            // });
+
+            // DataTable
+            var table = $('#cust_datatable').DataTable({
+                "pageLength": 50,
+                "processing": true,
+                "serverSide": true,
+//                    "searching": false,
+                "ajax": "http://localhost:8098/api/v1/diagnosis/report",
+                "columns": [
+
+
+                    {"data": 1},
+                    {"data": 2},
+                    {"data": 3},
+                    {"data": 4},
+                    {"data": 5},
+                    {"data": 6},
+
+                ],
+                "createdRow": function (row, data, index) {
+                    $('td', row).eq(5).html('<a href="Controller?Type=2&id=' + data[0] + '">' +
+                        '<i class="fa fa-plus-circle"></i> VIEW MORE' + '</a>');
+                }
+
+            });
+        });
+    </script>
+</body>
+</html>

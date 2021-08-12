@@ -6,8 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class DiagnosisResponse extends BaseModel{
-
-    String symptomName;
+public class DiagnosisResponse extends DiagnosisRequest{
 
 }
